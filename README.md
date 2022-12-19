@@ -1,21 +1,9 @@
 ## Generate your .env file to type declarations
 
-Installation
-
-```
-npm install --save-dev typed-env
-```
-
-or
-
-```
-yarn add -D typed-env
-```
-
 Command
 
 ```bash
-env-types <env-file> <file-name>
+npx env-types <env-file> <file-name>
 ```
 
 arg `file-name` is optional
@@ -23,7 +11,7 @@ arg `file-name` is optional
 Example command
 
 ```
-env-types .env.local my-env
+npx env-types .env.local my-env
 ```
 
 this command will generate file from `.env.local` to `my-env.d.ts` in main directory
