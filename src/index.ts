@@ -2,7 +2,6 @@
 import fs from "fs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import chalk from "chalk";
 
 const generate = () => {
   const argv = yargs(hideBin(process.argv)).command(
@@ -26,7 +25,7 @@ const generate = () => {
   const [envFile, fileName = "env"] = argv._;
 
   if (!envFile) {
-    console.error(chalk.red("Please specify the env file"));
+    console.error("Please specify the env file");
     process.exit(1);
   }
 
@@ -57,12 +56,10 @@ declare global {
     try {
       fs.writeFileSync(`${fileName}.d.ts`, content);
       console.log(
-        chalk.cyan(
-          `Generated declaration file for ${envFile} in ${fileName}.d.ts`
-        )
+        `Generated declaration file for ${envFile} in ${fileName}.d.ts`
       );
     } catch (error) {
-      console.error(chalk.red(error));
+      console.error(error);
       process.exit(1);
     }
   });
